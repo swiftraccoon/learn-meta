@@ -1,0 +1,25 @@
+# gateway/BUCK - Build configuration for Proxygen HTTP gateway
+
+cxx_binary(
+    name = "http_gateway",
+    srcs = [
+        "src/main.cpp",
+        "src/HttpServer.cpp",
+    ],
+    headers = {
+        "HttpServer.h": "src/HttpServer.h",
+    },
+    compiler_flags = [
+        "-std=c++20",  # TODO: Upgrade to C++23 once Proxygen/QUIC fix Expected namespace conflicts
+        "-Wall",
+        "-Wextra",
+        "-fcoroutines",  # Enable coroutines
+    ],
+    deps = [
+        "//third-party:glog",
+        "//third-party:gflags",
+        "//third-party:proxygen",
+        "//third-party:folly",
+    ],
+    visibility = ["PUBLIC"],
+)

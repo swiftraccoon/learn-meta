@@ -1,0 +1,31 @@
+[cells]
+root = .
+prelude = ref/buck2/prelude
+toolchains = toolchains
+fbthrift = ref/fbthrift
+buck2-examples = ref/buck2/examples
+shim = shim
+
+[repositories]
+prelude = ref/buck2/prelude
+fbthrift = ref/fbthrift
+buck2-examples = ref/buck2/examples
+shim = shim
+
+[repository_aliases]
+config = prelude
+ovr_config = shim
+fbsource = shim
+fbcode = shim
+fbcode_macros = shim
+buck = shim
+
+[parser]
+target_platform_detector_spec = target:root//...->prelude//platforms:default
+
+[build]
+execution = local
+toolchains = //toolchains:cxx
+
+[project]
+ignore = .git, buck-out

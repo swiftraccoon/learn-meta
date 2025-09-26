@@ -1,0 +1,53 @@
+# Third-party dependencies for learn-meta
+
+load(":defs.bzl", "homebrew_library")
+
+# glog - Google logging library
+homebrew_library(
+    name = "glog",
+    brew = "glog",
+    exported_linker_flags = ["-lglog"],
+)
+
+# gflags - Google command-line flags library
+homebrew_library(
+    name = "gflags",
+    brew = "gflags",
+    exported_linker_flags = ["-lgflags"],
+)
+
+# folly - Facebook's open-source C++ library
+homebrew_library(
+    name = "folly",
+    brew = "folly",
+    homebrew_header_path = "include",
+    exported_linker_flags = [
+        "-lfolly",
+        "-lboost_context",
+        "-lboost_filesystem",
+        "-lboost_program_options",
+        "-lboost_regex",
+        "-lboost_thread",
+        "-levent",
+        "-lssl",
+        "-lcrypto",
+        "-ldouble-conversion",
+        "-lfmt",
+    ],
+)
+
+# proxygen - Facebook's HTTP framework
+homebrew_library(
+    name = "proxygen",
+    brew = "proxygen",
+    homebrew_header_path = "include",
+    exported_linker_flags = [
+        "-lproxygen",
+        "-lproxygenhttpserver",
+    ],
+    deps = [
+        ":folly",
+        ":glog",
+        ":gflags",
+    ],
+)

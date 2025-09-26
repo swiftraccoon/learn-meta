@@ -1,0 +1,65 @@
+# Wrapper targets for system tools
+
+genrule(
+    name = "clang",
+    out = "clang",
+    cmd = "which clang > $OUT && chmod +x $OUT",
+    executable = True,
+    visibility = ["PUBLIC"],
+)
+
+genrule(
+    name = "clang++",
+    out = "clang++",
+    cmd = "which clang++ > $OUT && chmod +x $OUT",
+    executable = True,
+    visibility = ["PUBLIC"],
+)
+
+genrule(
+    name = "ar",
+    out = "ar",
+    cmd = "which ar > $OUT && chmod +x $OUT",
+    executable = True,
+    visibility = ["PUBLIC"],
+)
+
+genrule(
+    name = "as",
+    out = "as",
+    cmd = "which as > $OUT && chmod +x $OUT",
+    executable = True,
+    visibility = ["PUBLIC"],
+)
+
+genrule(
+    name = "nm",
+    out = "nm",
+    cmd = "which nm > $OUT && chmod +x $OUT",
+    executable = True,
+    visibility = ["PUBLIC"],
+)
+
+genrule(
+    name = "objcopy",
+    out = "objcopy",
+    cmd = "which objcopy > $OUT && chmod +x $OUT || (which gobjcopy > $OUT && chmod +x $OUT)",
+    executable = True,
+    visibility = ["PUBLIC"],
+)
+
+genrule(
+    name = "ranlib",
+    out = "ranlib",
+    cmd = "which ranlib > $OUT && chmod +x $OUT",
+    executable = True,
+    visibility = ["PUBLIC"],
+)
+
+genrule(
+    name = "strip",
+    out = "strip",
+    cmd = "which strip > $OUT && chmod +x $OUT",
+    executable = True,
+    visibility = ["PUBLIC"],
+)

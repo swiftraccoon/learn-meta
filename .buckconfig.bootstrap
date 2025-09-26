@@ -1,0 +1,11 @@
+[cells]
+root = .
+prelude = ref/buck2/prelude
+toolchains = toolchains
+
+[parser]
+target_platform_detector_spec = target:root//...->prelude//platforms:default
+
+[build]
+execution = local
+toolchains = //toolchains:cxx

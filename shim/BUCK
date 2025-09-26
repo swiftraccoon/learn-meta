@@ -1,0 +1,7 @@
+# Shim BUCK file to provide empty targets for Meta-internal dependencies
+
+# Empty targets that Meta-internal code might reference
+constraint_setting(
+    name = "none",
+    visibility = ["PUBLIC"],
+)
