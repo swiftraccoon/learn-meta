@@ -1,0 +1,18 @@
+[submodule "ref/sdrtrunk-rdio-api"]
+	path = ref/sdrtrunk-rdio-api
+	url = https://github.com/swiftraccoon/sdrtrunk-rdio-api
+[submodule "ref/sdrtrunk"]
+	path = ref/sdrtrunk
+	url = https://github.com/DSheirer/sdrtrunk
+[submodule "ref/ent"]
+	path = ref/ent
+	url = https://github.com/ent/ent
+[submodule "ref/buck2"]
+	path = ref/buck2
+	url = https://github.com/facebook/buck2
+[submodule "ref/fbthrift"]
+	path = ref/fbthrift
+	url = https://github.com/facebook/fbthrift
+[submodule "ref/hhvm"]
+	path = ref/hhvm
+	url = https://github.com/facebook/hhvm
